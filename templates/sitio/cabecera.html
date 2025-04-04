@@ -1,0 +1,24 @@
+<nav class="navbar navbar-black bg-black ">
+    <div class="container-fluid">
+      <div  class="d-flex align-items-center">
+        <a class="navbar-brand" d-flex align-items-center  href="index.html"></a>
+        <img src="https://getbootstrap.com/docs/5.0/assets/brand/bootstrap-logo.svg" alt="Bootstrap Logo" alt="" width="35" height="34" class="d-inline-block align-text-top">
+        <span class="ms-2 fs-3 text-white"> Juan Pablo Ruacho
+
+        </span>
+        </a>
+     
+        <form class="d-flex justify-context-start ms-2">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Buscar</button>
+        </form>
+        <div class="d-flex align-items-right">
+            <a href="{{ url_for('login') }}" class="btn btn-link me-2">Iniciar Sesión</a>
+            <a href="{{ url_for('register') }}" class="btn btn-link me-3"> Registrarse</a>
+          
+        </div> 
+      </div>
+      
+    </div>
+
+ </nav>

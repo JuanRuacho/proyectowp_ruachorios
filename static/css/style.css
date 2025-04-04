@@ -1,0 +1,61 @@
+.text-justify {
+    text-align: justify;
+}
+.gradient-custom {
+    /* fallback for old browsers */
+    background: #6a11cb;
+    
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));
+    
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1))
+    }
+.breadcrumbs {
+    list-style: none;        /* Elimina los puntos o marcas de la lista */
+    padding: 0;              /* Elimina el padding predeterminado de la lista */
+    margin: 0;               /* Elimina el margen predeterminado de la lista */
+    display: flex;           /* Utiliza flexbox para alinearlos horizontalmente */
+    gap: 10px;               /* Espacio entre los elementos de la lista */
+}
+
+.breadcrumbs li {
+    display: inline;         /* Asegura que los elementos de la lista estén en línea */
+}
+
+.breadcrumbs a {
+    text-decoration: none;   /* Elimina el subrayado de los enlaces */
+    color: #ef1010;          /* Cambia el color del texto de los enlaces */
+}
+
+.breadcrumbs li a:hover {
+    text-decoration: underline; /* Agrega subrayado al pasar el mouse sobre los enlaces */
+}
+.breadcrumbs li + li::before {
+    content: ">";           /* El separador entre los elementos */
+    padding: 0 10px;        /* Espacio alrededor del separador */
+    color: #888;            /* Color del separador */
+}
+/* Menu de navegacion en horizontal */
+.menu {
+    list-style: none;
+    padding: 10px;
+    display: flex; /* Alinear horizontalmente*/
+    justify-content: center; /*Centrar el menu*/
+    background-color: #000;
+
+}
+.menu li {
+    margin: 0 15px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #015656;
+    font-size: 18px;
+    padding: 10px;
+}
+.menu a:hover {
+    background-color: #888;
+    border-radius: 5px;
+}

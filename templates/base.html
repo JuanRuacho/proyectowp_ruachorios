@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{%block title %} {% endblock%}- Mi Sitio Personal</title>
+    <!-- Bootstrap CSS v5.2.1 -->
+
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename = 'css/bootstrap.min.css')}}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename = 'css/all.min.css')}}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename = 'css/styles.css')}}"
+    />
+
+  </head>
+  <body class="bg-dark text-white p-2">
+    {% include 'sitio/cabecera.html'%}
+    <!-- Cabecera comun para todas las paginas -->
+
+    <!-- Menú de navegación -->
+    {% if request.endpoint == 'index' %}
+    <nav class="nav bg-black text-white p-2">
+        <a class="nav-link active text-white" aria-current="page" href="{{ url_for('index') }}">Inicio</a>
+        <a class="nav-link text-white" href="{{ url_for('acercade') }}">Acerca de</a>
+        <a class="nav-link text-white" href="{{ url_for('proyectos') }}">Proyectos</a>
+        <a class="nav-link text-white" href="{{ url_for('contacto') }}">Contacto</a>
+        <a class="nav-link text-white" href="{{ url_for('mapasitio') }}">Mapa del sitio</a>
+    </nav>
+    {% endif %}
+
+    <!--Breadcrumbs-->
+    <nav aria-label="breadcrumb nav bg-dark text-white p-2">
+        <ol class="breadcrumb nav bg-dark text-white p-2">
+          {% for breadcrumb in g.get('breadcrumbs', []) %}
+            <li class="breadcrumb-item nav bg-dark text-white p-2">
+              <a href="{{ breadcrumb.url }}">{{ breadcrumb.text }}</a>
+            </li>
+          {% endfor %}
+        </ol>
+      </nav>
+      
+
+    <!-- Contenido de cada pagina-->
+    <div class="Contenido bg-dark text-white p-2 ">
+      {%block content%}{%endblock%}
+      <!-- aqui va ir el contenido dinamico-->
+    </div>
+    {% include 'sitio/pie.html' %}
+    <!-- Pie de pagina comun para todas las pagina-->
+
+    <script src="{{url_for('static', filename='js/bootstrap.bundle.min.js')}}"></script>
+  </body>
+</html>
